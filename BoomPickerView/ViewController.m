@@ -18,7 +18,6 @@ UIPickerViewDataSource
 
 @property(nonatomic, strong)BoomPickerView *boomPickerView;
 @property(nonatomic, strong)UIPickerView *sysPickerView;
-@property(nonatomic, strong)UICollectionView *collectionView;
 
 @end
 
@@ -71,14 +70,16 @@ UIPickerViewDataSource
     self.sysPickerView.dataSource = self;
     [self.view addSubview:self.sysPickerView];
     
+    /*
     // 💣牛批 找到Picker内置方法并禁止滚动时滴答音效
-//    SEL sse = NSSelectorFromString([NSString stringWithFormat:@"%@%@%@", @"set",@"Sounds",@"Enabled:"]);
-//    if ([UIPickerView instancesRespondToSelector:sse]) {
-//        IMP sseimp = [UIPickerView instanceMethodForSelector:sse];
-//        if (sseimp) {
-//            ((void (*)(id, SEL, BOOL))sseimp)(self.sysPickerView, sse, NO);
-//        }
-//    }
+    SEL sse = NSSelectorFromString([NSString stringWithFormat:@"%@%@%@", @"set",@"Sounds",@"Enabled:"]);
+    if ([UIPickerView instancesRespondToSelector:sse]) {
+        IMP sseimp = [UIPickerView instanceMethodForSelector:sse];
+        if (sseimp) {
+            ((void (*)(id, SEL, BOOL))sseimp)(self.sysPickerView, sse, NO);
+        }
+    }
+     */
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -108,9 +109,5 @@ UIPickerViewDataSource
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
     return 100;
 }
-
-//- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
-//    return 60;
-//}
 
 @end
