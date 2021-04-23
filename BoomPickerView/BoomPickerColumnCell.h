@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BoomPickerColumnCell : UITableViewCell
 
 @property(nonatomic, strong)UIView *customContentView;
-@property(nonatomic, weak)id<NSCopying, NSMutableCopying, NSSecureCoding> content;
+@property(nonatomic, weak)id content;
 
 @end
 

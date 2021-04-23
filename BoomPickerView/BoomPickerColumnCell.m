@@ -29,7 +29,7 @@
     [self.contentView addSubview: _customContentView];
 }
 
-- (void)setContent:(id<NSCopying,NSMutableCopying,NSSecureCoding>)content {
+- (void)setContent:(id)content {
     _content = content;
     NSString *title = (NSString *)content;
     if (title) {

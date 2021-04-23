@@ -34,7 +34,6 @@ UIPickerViewDataSource
     [super viewWillLayoutSubviews];
     self.boomPickerView.frame = CGRectMake(0, 0, 200, 300);
     self.sysPickerView.frame = CGRectMake(0, CGRectGetMaxY(self.boomPickerView.frame), CGRectGetWidth(self.boomPickerView.frame), 300);
-    self.collectionView.frame = CGRectMake(CGRectGetMaxX(self.boomPickerView.frame), 0, 200, 300);
 }
 
 #pragma mark - (jianghongbao)BoomPickerView

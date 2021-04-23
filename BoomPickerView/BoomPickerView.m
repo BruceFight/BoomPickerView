@@ -99,7 +99,7 @@
 
 // returns the number of 'columns' to display.
 - (NSInteger)numberOfComponents {
-    if (self.dataSource && [self.dataSource conformsToProtocol:@protocol(BoomPickerViewDataSource) ]) {
+    if (self.dataSource && [self.dataSource conformsToProtocol:@protocol(BoomPickerViewDataSource)]) {
         if ([self.dataSource respondsToSelector:@selector(numberOfComponentsInBoomPickerView:)]) {
             return [self.dataSource numberOfComponentsInBoomPickerView:self];
         }
@@ -109,7 +109,7 @@
 
 // returns the number of rows in each component..
 - (NSInteger)numberOfRowsInComponent:(NSInteger)component {
-    if (self.dataSource && [self.dataSource conformsToProtocol:@protocol(BoomPickerViewDataSource) ]) {
+    if (self.dataSource && [self.dataSource conformsToProtocol:@protocol(BoomPickerViewDataSource)]) {
         if ([self.dataSource respondsToSelector:@selector(boomPickerView:numberOfRowsInComponent:)]) {
             return [self.dataSource boomPickerView:self numberOfRowsInComponent:component];
         }
@@ -118,7 +118,7 @@
 }
 
 - (nullable UIView *)contentViewForRow:(NSInteger)row inComponent:(NSInteger)component {
-    if (self.dataSource && [self.dataSource conformsToProtocol:@protocol(BoomPickerViewDataSource) ]) {
+    if (self.dataSource && [self.dataSource conformsToProtocol:@protocol(BoomPickerViewDataSource)]) {
         if ([self.dataSource respondsToSelector:@selector(boomPickerView:contentViewForRow:inComponent:)]) {
             return [self.dataSource boomPickerView:self contentViewForRow:row inComponent:component];
         }
@@ -130,7 +130,7 @@
 
 // returns width of column and height of row for each component.
 - (CGFloat)widthForComponent:(NSInteger)component {
-    if (self.delegate && [self.delegate conformsToProtocol:@protocol(BoomPickerViewDelegate) ]) {
+    if (self.delegate && [self.delegate conformsToProtocol:@protocol(BoomPickerViewDelegate)]) {
         if ([self.delegate respondsToSelector:@selector(boomPickerView:widthForComponent:)]) {
             return [self.delegate boomPickerView:self widthForComponent:component];
         }
@@ -139,7 +139,7 @@
 }
 
 - (CGFloat)rowHeightForComponent:(NSInteger)component {
-    if (self.delegate && [self.delegate conformsToProtocol:@protocol(BoomPickerViewDelegate) ]) {
+    if (self.delegate && [self.delegate conformsToProtocol:@protocol(BoomPickerViewDelegate)]) {
         if ([self.delegate respondsToSelector:@selector(boomPickerView:rowHeightForComponent:)]) {
             return [self.delegate boomPickerView:self rowHeightForComponent:component];
         }
@@ -151,7 +151,7 @@
 // for the view versions, we cache any hidden and thus unused views and pass them back for reuse.
 // If you return back a different object, the old one will be released. the view will be centered in the row rect
 - (nullable NSString *)titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    if (self.delegate && [self.delegate conformsToProtocol:@protocol(BoomPickerViewDelegate) ]) {
+    if (self.delegate && [self.delegate conformsToProtocol:@protocol(BoomPickerViewDelegate)]) {
         if ([self.delegate respondsToSelector:@selector(boomPickerView:titleForRow:forComponent:)]) {
             return [self.delegate boomPickerView:self titleForRow:row forComponent:component];
         }
@@ -161,7 +161,7 @@
 
 // attributed title is favored if both methods are implemented
 - (nullable NSAttributedString *)boomPickerView:(BoomPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    if (self.delegate && [self.delegate conformsToProtocol:@protocol(BoomPickerViewDelegate) ]) {
+    if (self.delegate && [self.delegate conformsToProtocol:@protocol(BoomPickerViewDelegate)]) {
         if ([self.delegate respondsToSelector:@selector(boomPickerView:attributedTitleForRow:forComponent:)]) {
             return [self.delegate boomPickerView:self attributedTitleForRow:row forComponent:component];
         }
@@ -170,7 +170,7 @@
 }
 
 - (UIView *)viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(nullable UIView *)view {
-    if (self.delegate && [self.delegate conformsToProtocol:@protocol(BoomPickerViewDelegate) ]) {
+    if (self.delegate && [self.delegate conformsToProtocol:@protocol(BoomPickerViewDelegate)]) {
         if ([self.delegate respondsToSelector:@selector(boomPickerView:viewForRow:forComponent:reusingView:)]) {
             return [self.delegate boomPickerView:self viewForRow:row forComponent:component reusingView:view];
         }
@@ -180,7 +180,7 @@
 
 // didselect row in a component
 - (void)boomPickerView:(BoomPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    if (self.delegate && [self.delegate conformsToProtocol:@protocol(BoomPickerViewDelegate) ]) {
+    if (self.delegate && [self.delegate conformsToProtocol:@protocol(BoomPickerViewDelegate)]) {
         if ([self.delegate respondsToSelector:@selector(boomPickerView:didSelectRow:inComponent:)]) {
             [self.delegate boomPickerView:self didSelectRow:row inComponent:component];
         }
